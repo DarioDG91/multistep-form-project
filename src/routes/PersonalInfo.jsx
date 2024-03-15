@@ -5,17 +5,29 @@ import Header from "../components/Header";
 
 export default function PersonalInfo() {
   const navigate = useNavigate();
-  const [userInfo, setUserInfo] = useState(() =>
-    JSON.parse(localStorage.getItem("userInfo"))
-  );
+  const [userInfo, setUserInfo] = useState(() => {
+    const storedValues = localStorage.getItem("userInfo");
+    return storedValues
+      ? JSON.parse(storedValues)
+      : { name: "", email: "", phoneNumber: "" };
+  });
 
   const [isNameValid, setIsNameValid] = useState(true);
   const [isEmailValid, setIsEmailValid] = useState(true);
   const [isNumberValid, setIsNumberValid] = useState(true);
 
+  // Effect to persist input values object to localStorage on change
   useEffect(() => {
     localStorage.setItem("userInfo", JSON.stringify(userInfo));
   }, [userInfo]);
+
+  // Effect to retrieve input values object from localStorage on component mount
+  useEffect(() => {
+    const storedValues = JSON.parse(localStorage.getItem("userInfo"));
+    if (storedValues !== null) {
+      setUserInfo(storedValues);
+    }
+  }, []);
 
   function onChangeName(e) {
     setUserInfo((prev) => {
@@ -100,7 +112,7 @@ export default function PersonalInfo() {
               id="phone"
               label="Phone Number"
               type="number"
-              inputType='tel'
+              inputType="tel"
               placeholder="e.g. +1 234 567 890"
               value={userInfo.phoneNumber}
             />
