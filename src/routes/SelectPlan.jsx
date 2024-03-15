@@ -77,7 +77,7 @@ export default function SelectPlan() {
 
   return (
     <main className=" flex flex-col justify-between">
-      <div className=" bg-white mx-4  -mb-8 px-6 py-[1.8rem] rounded-lg -translate-y-[4.5rem] shadow-lg shadow-gray-200 sm:shadow-transparent sm:translate-y-0 sm:px-20 sm:py-10 sm:mx-0">
+      <div className=" bg-white mx-4 mb-6 px-6 py-[1.8rem] rounded-lg -translate-y-[4.5rem] shadow-lg shadow-gray-200 sm:shadow-transparent sm:translate-y-0 sm:px-20 sm:py-10 sm:mx-0">
         <Header
           title="Select your plan"
           paragraph="You have the option of monthly or yearly billing."

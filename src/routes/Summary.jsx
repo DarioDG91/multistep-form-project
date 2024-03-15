@@ -26,7 +26,7 @@ export default function Summary() {
 
   const summary = (
     <main className=" flex flex-col justify-between sm:pl-[6.5rem] sm:pr-[5.5rem] ">
-      <div className=" bg-white mx-4  -mb-8 px-6 sm:px-0 py-[1.8rem] rounded-lg -translate-y-[4.5rem] shadow-lg shadow-gray-200 sm:shadow-transparent sm:translate-y-0  sm:py-10 sm:mx-0">
+      <div className=" bg-white mx-4 mb-6 px-6 sm:px-0 py-[1.8rem] rounded-lg -translate-y-[4.5rem] shadow-lg shadow-gray-200 sm:shadow-transparent sm:translate-y-0  sm:py-10 sm:mx-0">
         <Header
           title="Finishing Up"
           paragraph="Double-check everything looks OK before confirming."

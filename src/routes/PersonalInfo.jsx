@@ -80,54 +80,56 @@ export default function PersonalInfo() {
   }
 
   return (
-    <main className=" flex flex-col justify-between ">
-      <div className=" bg-white mx-4 mb-4 px-6 py-8 rounded-lg -translate-y-[4.5rem] shadow-lg shadow-gray-200 sm:shadow-transparent sm:translate-y-0  sm:px-20 sm:py-10 sm:mx-0 ">
-        <Header
-          title="Personal Info"
-          paragraph="Please provide your name, email address, and phone number."
-        />
-        <form id="form" onSubmit={handleSubmit}>
-          <div className=" flex flex-col gap-4 sm:gap-5">
-            <Input
-              onChange={onChangeName}
-              isValid={isNameValid}
-              id="name"
-              label="Name"
-              type="text"
-              placeholder="e.g. Stephen King"
-              value={userInfo.name}
-            />
-            <Input
-              onChange={onChangeEmail}
-              isValid={isEmailValid}
-              id="email"
-              label="Email Address"
-              type="email"
-              placeholder="e.g. stephenking@lorem.com"
-              value={userInfo.email}
-            />
-            <Input
-              onChange={onChangeNumber}
-              isValid={isNumberValid}
-              id="phone"
-              label="Phone Number"
-              type="number"
-              inputType="tel"
-              placeholder="e.g. +1 234 567 890"
-              value={userInfo.phoneNumber}
-            />
-          </div>
-        </form>
-      </div>
-      <div className="absolute bottom-0 w-full sm:static p-4 flex justify-end items-center bg-white sm:px-20">
-        <button
-          form="form"
-          type="submit"
-          className=" px-4 py-2 rounded-md  bg-marineBlue text-sm font-bold text-white  sm:py-3 sm:px-5 sm:text-base transition ease-in-out delay-75 hover:opacity-80 "
-        >
-          Next Step
-        </button>
-      </div>
-    </main>
+    <>
+      <main className=" flex flex-col justify-between ">
+        <div className=" bg-white mx-4 mb-6 px-6 py-8 rounded-lg -translate-y-[4.5rem] shadow-lg shadow-gray-200 sm:shadow-transparent sm:translate-y-0  sm:px-20 sm:py-10 sm:mx-0 ">
+          <Header
+            title="Personal Info"
+            paragraph="Please provide your name, email address, and phone number."
+          />
+          <form id="form" onSubmit={handleSubmit}>
+            <div className=" flex flex-col gap-4 sm:gap-5">
+              <Input
+                onChange={onChangeName}
+                isValid={isNameValid}
+                id="name"
+                label="Name"
+                type="text"
+                placeholder="e.g. Stephen King"
+                value={userInfo.name}
+              />
+              <Input
+                onChange={onChangeEmail}
+                isValid={isEmailValid}
+                id="email"
+                label="Email Address"
+                type="email"
+                placeholder="e.g. stephenking@lorem.com"
+                value={userInfo.email}
+              />
+              <Input
+                onChange={onChangeNumber}
+                isValid={isNumberValid}
+                id="phone"
+                label="Phone Number"
+                type="number"
+                inputType="tel"
+                placeholder="e.g. +1 234 567 890"
+                value={userInfo.phoneNumber}
+              />
+            </div>
+          </form>
+        </div>
+        <div className="absolute bottom-0 w-full sm:static p-4 flex justify-end items-center bg-white sm:px-20">
+          <button
+            form="form"
+            type="submit"
+            className=" px-4 py-2 rounded-md  bg-marineBlue text-sm font-bold text-white  sm:py-3 sm:px-5 sm:text-base transition ease-in-out delay-75 hover:opacity-80 "
+          >
+            Next Step
+          </button>
+        </div>
+      </main>
+    </>
   );
 }
